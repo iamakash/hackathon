@@ -1,6 +1,13 @@
 <html>
 <head>
     <meta name='layout' content='main'/>
+    <script src='${resource(dir: "/tinymce/js/tinymce", file: "tinymce.min.js")}'></script>
+
+    <script>
+        tinymce.init({
+            selector: '#description'
+        });
+    </script>
 </head>
 
 <body>
