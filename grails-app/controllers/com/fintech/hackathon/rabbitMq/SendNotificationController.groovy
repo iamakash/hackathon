@@ -9,10 +9,10 @@ class SendNotificationController {
     def send() {
         ExecutorService executorService = Executors.newFixedThreadPool(1)
         try {
-               executorService.execute(callForNotificationService)
-            }
-            catch(Exception ex){
-             println("Exception Occur : ${ex.message}")
-            }
+            executorService.execute(callForNotificationService)
+        }
+        catch(Exception ex){
+            println("Exception Occur : ${ex.message}")
         }
     }
+}
