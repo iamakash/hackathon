@@ -12,8 +12,8 @@ class HomeController {
 println("sending.........")
         sendMail {
             to "anuj@nexthoughts.com"
-            subject "Hello Anuj"
-            html "max is success"
+            subject "Hello John"
+            html g.render(template:"/templates/email")
         }
         println("sending success.........")
 
