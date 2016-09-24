@@ -115,3 +115,18 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+rabbitmq {
+    connectionfactory {
+        username = 'guest'
+        password = 'guest'
+        hostname = 'localhost'
+//        consumers = 5
+    }
+
+    queues = {
+        exchange name: 'trackIssue', type: topic, durable: true, autoDelete: false, {
+            sendNotification durable: true, autoDelete: false, binding: 'trackIssue.sendNotification'
+        }
+    }
+}
