@@ -21,7 +21,7 @@ class BootstrapService {
         Role roleAdmin = Role.findByAuthority("ROLE_ADMIN")
         Role roleUser = Role.findByAuthority("ROLE_USER")
         if (!(User.findByUsername("akash"))) {
-            User admin = new User(username: "akash", password: "akash")
+            User admin = new User(username: "akash", password: "akash",emailAddress: "akash@gmail.com")
             admin.save(flush: true, failOnError: true)
             UserRole.create(admin, roleAdmin, true)
             UserRole.create(admin, roleUser, true)
@@ -33,16 +33,17 @@ class BootstrapService {
         def csvData = AppUtil.readCsvFile()
         Role roleUser = Role.findByAuthority("ROLE_USER")
         if (!(User.findByUsername("abhinav"))) {
-            User user = new User(username: "abhinav", password: "abhinav")
+            User user = new User(username: "abhinav", password: "abhinav",emailAddress: "abhinav@gmail.com")
             user.save(flush: true, failOnError: true)
             UserRole.create(user, roleUser, true)
         }
+
         csvData.each {
             saveIfNotExists(
                     new User(
                             username: fetchFromCsv('First Name', it) + "@email.com",
                             password: fetchFromCsv('First Name', it) + "@email.com",
-
+                            emailAddress: fetchFromCsv('First Name', it) + "@email.com"
                     ), "ROLE_USER",
             )
         }
@@ -72,9 +73,9 @@ class BootstrapService {
 
     }
 
-    def createMilestones(){
+    def createMilestones() {
         User user = User.findByUsername("akash")
-        if (DefaultMilestone.findAll().size()==0){
+        if (DefaultMilestone.findAll().size() == 0) {
 
         }
     }
