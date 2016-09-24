@@ -25,17 +25,6 @@
 </head>
 
 <body>
-
-<div class="header">
-    <div class="row" style="background-color: #ccccff">
-        <div class="col-md-12">
-            <div class="col-sm-4" id="issueLogo" role="banner">
-                <asset:image style="width: 70%;background-color: #ccccff" src="issuetrak-logo-retina.png" alt="issue"/>
-            </div>
-            <g:render template="/layouts/userNavigation"/>
-        </div>
-    </div>
-</div>
 <g:layoutBody/>
 <g:render template="/templates/footer"/>
 <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt"
