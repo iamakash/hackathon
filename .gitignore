@@ -9,7 +9,11 @@ target
 *.DS_Store
 /web/chromedriver.log
 /web/.gradle/
-test/data/
+test
 web/*.sql
 web/*.db
 web/*.log
+application.properties
+grailsw
+grailsw.bat
+web-app/WEB-INF
