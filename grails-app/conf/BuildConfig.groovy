@@ -61,6 +61,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
+        compile "org.grails.plugins:spring-security-core:2.0.0"
         compile ":rabbitmq:1.0.0"
         compile ":remote-pagination:0.4.8"
 
