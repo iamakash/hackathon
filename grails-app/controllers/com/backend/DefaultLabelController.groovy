@@ -15,8 +15,7 @@ class DefaultLabelController {
             defaultLabelService.save(defaultLabelCO)
             //render view :"/defaultLabel/show"
         } else {
-            flash.defaultLabelError = "please enter unique name"
-            render view: "/defaultLabel/create"
+            render view: "/defaultLabel/create", model: [defaultLabelCOError: defaultLabelCO.errors]
         }
     }
 
@@ -32,10 +31,15 @@ class DefaultLabelController {
             defaultLabelService.update(defaultLabelCO, defaultLabel)
 
         } else {
-            flash.defaultLabelUpdateError = "please enter unique name"
-            render view: "/defaultLabel/edit"
+            render view: "/defaultLabel/edit", model: [defaultLabelCOError: defaultLabelCO.errors]
         }
 
     }
+
+    def show() {
+
+        List<DefaultLabel> list = defaultLabelService.list(params.max ? params.int('max') : 10, params.offset ? params.int('offset') : 0)
+    }
+
 
 }

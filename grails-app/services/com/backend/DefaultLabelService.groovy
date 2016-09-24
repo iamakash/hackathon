@@ -19,7 +19,12 @@ class DefaultLabelService {
         defaultLabel.name = defaultLabelCO.name
         defaultLabel.description = defaultLabelCO.description
         defaultLabel.modifiedBy = modifiedBy
-
     }
+    List<DefaultLabel> list(Integer max,Integer offset){
+        List<DefaultLabel> list=DefaultLabel.createCriteria().list {
+
+        }
+    }
+
 
 }
