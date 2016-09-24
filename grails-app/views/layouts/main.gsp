@@ -19,9 +19,7 @@
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image style="width: 10%" src="issue-logo.png" alt="Grails"/></a></div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo">
-		Footer
-	</div>
+		<g:render template="/templates/footer"/>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>
