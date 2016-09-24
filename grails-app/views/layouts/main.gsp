@@ -31,7 +31,7 @@
         </div>
         <sec:ifLoggedIn>
             <div class="col-sm-8" style="text-align: center;margin-top: 1%" role="banner">
-                <div class="dropdown text-right" style="margin-right: 5px;">
+                <div class="dropdown text-right" style="margin-right: 3%;">
                     <a href="${createLink(controller: "logout")}" class="btn btn-success dropdown-toggle color"
                        type="button" aria-haspopup="true" aria-expanded="true">
                         Logout
