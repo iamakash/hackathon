@@ -14,20 +14,29 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="bootstrap.min.css"/>
   		<asset:stylesheet src="custom.css"/>
+		<asset:javascript src="jquery-1.11.1.min.js"/>
+		<asset:javascript src="jquery-1.10.2.js"/>
 		<asset:javascript src="bootstrap.min.js"/>
-		<asset:javascript src="jquery.2.2.3.min.js"/>
+
 		<g:layoutHead/>
 	</head>
 	<body>
+
 	<div class="header">
 		<div class="row" style="background-color: #ccccff">
 		<div class="col-sm-4" id="issueLogo" role="banner">
 			<asset:image style="width: 70%;background-color: #ccccff" src="issuetrak-logo-retina.png" alt="issue"/>
 		</div>
-			<div class="col-sm-8" style="text-align: center" role="banner">
-			<div class="row" style="margin-top: 2%">
+			<div class="col-sm-8" style="text-align: center;margin-top: 1%" role="banner">
+				<div class="col-sm-8">
+				<button class="btn btn-success color" type="submit">Button</button>
+				<button class="btn btn-success color" type="submit">Button</button>
+				<button class="btn btn-success color" type="submit">Button</button>
+				<button class="btn btn-success color" type="submit">Button</button>
+				</div>
+				<div class="col-sm-4">
 					<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<button class="btn btn-success dropdown-toggle color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						Dropdown
 						<span class="caret"></span>
 					</button>
@@ -39,12 +48,12 @@
 						<li><a href="#">Separated link</a></li>
 					</ul>
 				</div>
-			</div>
+				</div>
 			</div>
 		</div>
 	</div>
 		<g:layoutBody/>
 		<g:render template="/templates/footer"/>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		%{--<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>--}%
 	</body>
 </html>
