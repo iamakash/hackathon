@@ -19,7 +19,7 @@
                     <input type="text" id="userName" name="j_username" class="form-control input-sm chat-input"
                            placeholder="username"/>
                 </br>
-                    <input type="text" id="userPassword" name="j_password" class="form-control input-sm chat-input"
+                    <input type="password" id="userPassword" name="j_password" class="form-control input-sm chat-input"
                            placeholder="password"/>
                 </br>
                     <div class="wrapper">
