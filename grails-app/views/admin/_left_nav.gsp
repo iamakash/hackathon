@@ -19,9 +19,9 @@
                  <a href="#">Team</a>
              </li>
              <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra <span class="caret"></span></a>
                <ul class="dropdown-menu" role="menu">
-                 <li class="dropdown-header">Extra</li>
+                 <li class="dropdown-header"></li>
                  <li><a href="${createLink(controller: "admin",action: "showMilestone")}">Mile Stone</a></li>
                  <li><a href="#">Label</a></li>
                </ul>

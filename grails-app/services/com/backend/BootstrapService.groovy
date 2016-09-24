@@ -72,5 +72,12 @@ class BootstrapService {
 
     }
 
+    def createMilestones(){
+        User user = User.findByUsername("akash")
+        if (DefaultMilestone.findAll().size()==0){
+
+        }
+    }
+
 
 }
