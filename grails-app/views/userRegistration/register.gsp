@@ -1,9 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: abhinav
-  Date: 24/9/16
-  Time: 5:50 PM
---%>
+
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -13,7 +8,7 @@
 
 <body>
 <div class="row" style="text-align: center;margin-top: 10%">
-    <div class="col-md-offset-4 col-md-4">
+    <div class="col-md-offset-4 col-md-4 col-lg-6 col-lg-3">
         <div class="form-login">
             <form action='${createLink(action: "register", controller: "userRegistration")}' method='POST'
                   id='loginForm' class='cssform' autocomplete='off'>
