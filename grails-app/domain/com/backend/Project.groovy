@@ -1,12 +1,12 @@
 package com.backend
 
+import com.backend.util.command.DefaultMilestoneCO
+import com.backend.util.command.ProjectCO
+
 class Project implements Serializable {
 
     String name
     String description
-    Label defaultLabel
-    State defaultState
-    Milestone defaultMilestone
 
     Date dateCreated
     Date lastUpdated
@@ -22,13 +22,17 @@ class Project implements Serializable {
 
     static constraints = {
         name nullable: false, blank: false, matches: /[a-zA-Z0-9_-]+/
-        defaultLabel nullable: false
-        defaultState nullable: false
-        defaultMilestone nullable: false
         description nullable: true
         createdBy nullable: true
         modifiedBy nullable: true
         dateCreated nullable: true
         lastUpdated nullable: true
+    }
+
+    Project(ProjectCO projectCO) {
+        name = projectCO.name
+        description = projectCO.description
+        createdBy = projectCO.createdBy
+        modifiedBy = projectCO.modifiedBy
     }
 }

@@ -56,9 +56,6 @@ class AdminController {
     def saveLabel(DefaultLabelCO defaultLabelCO) {
         User user = springSecurityService.currentUser as User
         defaultLabelCO.createdBy = user
-        println defaultLabelCO.name
-        println defaultLabelCO.description
-        println defaultLabelCO.createdBy
         def returnVal = defaultLabelService.create(defaultLabelCO)
         if (returnVal) {
             flash.message = "Label created Successfully"

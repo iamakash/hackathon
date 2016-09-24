@@ -9,8 +9,13 @@
              <li>
                  <a href="${createLink(controller: "admin",action: "index")}">Home</a>
              </li>
-             <li>
-                 <a href="#">About</a>
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Default Label <span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="${createLink(controller: "defaultLabel",action: "create")}">Create</a></li>
+                     <li><a href="${createLink(controller: "defaultLabel",action: "show")}">Show</a></li>
+                     <li><a href="#">Label</a></li>
+                 </ul>
              </li>
              <li>
                  <a href="#">Events</a>
