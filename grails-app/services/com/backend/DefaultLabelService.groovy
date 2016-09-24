@@ -20,9 +20,11 @@ class DefaultLabelService {
         defaultLabel.description = defaultLabelCO.description
         defaultLabel.modifiedBy = modifiedBy
     }
-    List<DefaultLabel> list(Integer max,Integer offset){
-        List<DefaultLabel> list=DefaultLabel.createCriteria().list {
 
+    List<DefaultLabel> list(Integer max, Integer offset) {
+        List<DefaultLabel> list = DefaultLabel.createCriteria().list {
+            maxResults(max)
+            firstResult(offset)
         }
     }
 

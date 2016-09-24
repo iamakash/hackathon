@@ -39,6 +39,7 @@ class DefaultLabelController {
     def show() {
 
         List<DefaultLabel> list = defaultLabelService.list(params.max ? params.int('max') : 10, params.offset ? params.int('offset') : 0)
+        render view:"/defaultLabel/show",model: [list:list]
     }
 
 
