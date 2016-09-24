@@ -1,7 +1,7 @@
 <sec:ifLoggedIn>
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="${createLink(controller: "")}">Projects</a></li>
+            <li class="active"><a href="${createLink(controller: "project")}">Projects</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
