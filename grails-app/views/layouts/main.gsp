@@ -18,6 +18,8 @@
     <asset:javascript src="jquery-1.10.2.js"/>
     <asset:javascript src="bootstrap.min.js"/>
     <asset:stylesheet src="login.css"/>
+    <asset:stylesheet src="leftslider.css"/>
+    <asset:javascript src="leftslider.js"/>
 
     <g:layoutHead/>
 </head>
