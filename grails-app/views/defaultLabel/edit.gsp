@@ -17,21 +17,23 @@
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3 center-block">
             <div class="panel panel-primary">
-                <div class="panel-heading">DefaultLabel</div>
+                <div class="panel-heading">Update DefaultLabel</div>
 
                 <div class="panel-body">
                     <form action="${createLink(action: "update", controller: "defaultLabel", params: [defaultLabelId: defaultLabelId])}">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" id="name" %{--placeholder="${defaultLabelName}"--}%
-                             value="${defaultLabelName}" >
+                            <input type="text" class="form-control" name="name"
+                                   id="name" %{--placeholder="${defaultLabelName}"--}%
+                                   value="${defaultLabelName}">
                             <g:hasErrors bean="${defaultLabelCOError}"/><g:renderErrors
                                     bean="${defaultLabelCOError}" field="name" as="list"/>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea class="form-control" id="description" placeholder="${defaultLabelDescription}" name="description"
+                            <textarea class="form-control" id="description" placeholder="${defaultLabelDescription}"
+                                      name="description"
                                       value="${defaultLabelDescription}" rows="3"></textarea>
                             <g:hasErrors bean="${defaultLabelCOError}"/><g:renderErrors
                                     bean="${defaultLabelCOError}" field="description" as="list"/>
