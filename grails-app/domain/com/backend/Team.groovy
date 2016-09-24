@@ -1,6 +1,6 @@
 package com.backend
 
-class Group implements Serializable {
+class Team implements Serializable{
 
     String name
     String description
@@ -9,10 +9,6 @@ class Group implements Serializable {
     Date lastUpdated
     User createdBy
     User modifiedBy
-
-    static hasMany = [
-            users: User
-    ]
 
     static constraints = {
         name nullable: false, blank: false, matches: /[a-zA-Z0-9_-]+/
