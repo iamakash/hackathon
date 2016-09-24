@@ -13,11 +13,36 @@
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="bootstrap.min.css"/>
+  		<asset:stylesheet src="custom.css"/>
 		<asset:javascript src="bootstrap.min.js"/>
+		<asset:javascript src="jquery.2.2.3.min.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image style="width: 10%" src="issue-logo.png" alt="Grails"/></a></div>
+	<div class="header">
+		<div class="row" style="background-color: #ccccff">
+		<div class="col-sm-4" id="issueLogo" role="banner">
+			<asset:image style="width: 70%;background-color: #ccccff" src="issuetrak-logo-retina.png" alt="issue"/>
+		</div>
+			<div class="col-sm-8" style="text-align: center" role="banner">
+			<div class="row" style="margin-top: 2%">
+					<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Dropdown
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 		Footer
