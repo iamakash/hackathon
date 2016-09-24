@@ -19,16 +19,17 @@ class ProjectController {
     }
 
     def save(ProjectCO projectCO) {
-        if (projectCO.validate()) {
+        Project project = Project.findByName(projectCO.name)
+
+        if (projectCO.validate() && !project) {
             projectService.save(projectCO)
             flash.message = "Project created Successfully"
             redirect action: "index"
-        } else {
-
         }
     }
 
     def projectDetail() {
-
+        Project project = Project.findByName(params.name)
+        [project: project]
     }
 }

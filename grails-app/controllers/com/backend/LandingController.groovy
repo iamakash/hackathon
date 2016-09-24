@@ -15,7 +15,7 @@ class LandingController {
         if (roles.authority.contains("ROLE_ADMIN")) {
             redirect controller: "admin", action: "index"
         } else if (roles.authority.contains("ROLE_USER")) {
-            redirect controller: "user", action: "index"
+            redirect controller: "project", action: "index"
         }
     }
 }
