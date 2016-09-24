@@ -1,9 +1,10 @@
-package com.backend
+package com.backend.util.command
 
-import com.backend.util.command.DefaultMilestoneCO
+import com.backend.User
+import grails.validation.Validateable
 
-class DefaultMilestone implements Serializable {
-
+@Validateable
+class DefaultMilestoneCO {
     String name
     String description
 
@@ -19,12 +20,5 @@ class DefaultMilestone implements Serializable {
         modifiedBy nullable: true
         dateCreated nullable: true
         lastUpdated nullable: true
-    }
-
-    DefaultMilestone(DefaultMilestoneCO defaultMilestoneCO){
-        name = defaultMilestoneCO.name
-        description = defaultMilestoneCO.description
-        createdBy = defaultMilestoneCO.createdBy
-        modifiedBy = defaultMilestoneCO.modifiedBy
     }
 }
