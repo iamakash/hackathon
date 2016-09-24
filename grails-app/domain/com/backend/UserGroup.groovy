@@ -18,7 +18,7 @@ class UserGroup implements Serializable {
     }
 
     static mapping = {
-        id composite: ['user', 'role']
+        id composite: ['user', 'group']
         version false
     }
 }
