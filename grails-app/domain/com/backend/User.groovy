@@ -1,55 +1,68 @@
 package com.backend
 
+import com.backend.command.RegisterCO
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
-@EqualsAndHashCode(includes='username')
-@ToString(includes='username', includeNames=true, includePackage=false)
+@EqualsAndHashCode(includes = 'username')
+@ToString(includes = 'username', includeNames = true, includePackage = false)
 class User implements Serializable {
 
-	private static final long serialVersionUID = 1
+    private static final long serialVersionUID = 1
 
-	transient springSecurityService
+    transient springSecurityService
 
-	String username
-	String password
-	boolean enabled = true
-	boolean accountExpired
-	boolean accountLocked
-	boolean passwordExpired
+    String username
+    String password
+    String emailAddress
+    String uuid = UUID.randomUUID().toString()
+    boolean enabled = true
+    boolean accountExpired
+    boolean accountLocked
+    boolean passwordExpired
 
-	User(String username, String password) {
-		this()
-		this.username = username
-		this.password = password
-	}
+    User(String username, String password) {
+        this()
+        this.username = username
+        this.password = password
+    }
 
-	Set<Role> getAuthorities() {
-		UserRole.findAllByUser(this)*.role
-	}
+    User(RegisterCO registerCO) {
+        this()
+        this.username = registerCO.username
+        this.password = registerCO.password
+        this.enabled = false
+        this.emailAddress = registerCO.emailAddress
+    }
 
-	def beforeInsert() {
-		encodePassword()
-	}
+    Set<Role> getAuthorities() {
+        UserRole.findAllByUser(this)*.role
+    }
 
-	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
-	}
+    def beforeInsert() {
+        encodePassword()
+    }
 
-	protected void encodePassword() {
-		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
-	}
+    def beforeUpdate() {
+        if (isDirty('password')) {
+            encodePassword()
+        }
+    }
 
-	static transients = ['springSecurityService']
+    protected void encodePassword() {
+        password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+    }
 
-	static constraints = {
-		username blank: false, unique: true
-		password blank: false
-	}
+    static transients = ['springSecurityService']
 
-	static mapping = {
-		password column: '`password`'
-	}
+    static constraints = {
+        username blank: false, unique: true
+        password blank: false
+        emailAddress blank: false
+
+    }
+
+    static mapping = {
+        password column: '`password`'
+    }
 }
