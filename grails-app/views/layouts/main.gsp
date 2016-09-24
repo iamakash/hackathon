@@ -21,6 +21,7 @@
 
     <g:layoutHead/>
 </head>
+
 <body>
 
 <div class="header">
@@ -28,48 +29,65 @@
         <div class="col-sm-4" id="issueLogo" role="banner">
             <asset:image style="width: 70%;background-color: #ccccff" src="issuetrak-logo-retina.png" alt="issue"/>
         </div>
-        <div class="col-sm-8" style="text-align: center;margin-top: 1%" role="banner">
-            <div class="col-sm-8">
-                <div class="col-sm-4 dropdown" style="padding-right: 0px">
-                    <button class="btn btn-success dropdown-toggle color" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Dropdown
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+        <sec:ifLoggedIn>
+            <div class="col-sm-8" style="text-align: center;margin-top: 1%" role="banner">
+                <div class="dropdown text-right" style="margin-right: 5px;">
+                    <a href="${createLink(controller: "logout")}" class="btn btn-success dropdown-toggle color"
+                       type="button" aria-haspopup="true" aria-expanded="true">
+                        Logout
+                    </a>
                 </div>
+            </div>
+        </sec:ifLoggedIn>
+        <sec:ifNotLoggedIn>
+            <div class="col-sm-8" style="text-align: center;margin-top: 1%" role="banner">
                 <div class="col-sm-8">
-                    <button class="btn btn-success color" type="submit">Button</button>
-                    <button class="btn btn-success color" type="submit">Button</button>
-                    <button class="btn btn-success color" type="submit">Button</button>
-                    <button class="btn btn-success color" type="submit">Button</button>
+                    <div class="col-sm-4 dropdown" style="padding-right: 0px">
+                        <button class="btn btn-success dropdown-toggle color" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <button class="btn btn-success color" type="submit">Button</button>
+                        <button class="btn btn-success color" type="submit">Button</button>
+                        <button class="btn btn-success color" type="submit">Button</button>
+                        <button class="btn btn-success color" type="submit">Button</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle color" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Dropdown
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </sec:ifNotLoggedIn>
     </div>
 </div>
 <g:layoutBody/>
 <g:render template="/templates/footer"/>
-<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt"
+                                                                   default="Loading&hellip;"/></div>
 </body>
 </html>
