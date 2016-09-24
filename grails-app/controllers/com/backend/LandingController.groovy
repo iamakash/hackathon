@@ -12,8 +12,7 @@ class LandingController {
         List<Role> roles = user.getAuthorities().toList()
         roles.each { print it }
         if (roles.authority.contains("ROLE_ADMIN")) {
-            render "you are a admin"
-           // redirect(controller: "user", action: "index")
+            redirect controller: "admin", action: "index"
         } else if (roles.authority.contains("ROLE_USER") ) {
             render "you are a user"
          //   redirect(controller: "admin", action: "index")
