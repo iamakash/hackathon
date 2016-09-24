@@ -1,8 +1,8 @@
+%{--
 <div class="panel panel-primary">
     <div class="panel-heading">Form Name</div>
 
     <div class="panel-body">
-%{--
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -86,9 +86,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
---}%
 
     </div>
 
     <div class="panel-footer"></div>
-</div>
+</div>--}%
