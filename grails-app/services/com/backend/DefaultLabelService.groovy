@@ -16,6 +16,7 @@ class DefaultLabelService {
 
     def update(DefaultLabelCO defaultLabelCO, DefaultLabel defaultLabel) {
         User modifiedBy = authenticationService.authenticatedUser()
+        defaultLabel=Default
         defaultLabel.name = defaultLabelCO.name
         defaultLabel.description = defaultLabelCO.description
         defaultLabel.modifiedBy = modifiedBy
