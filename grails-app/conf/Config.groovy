@@ -128,6 +128,9 @@ rabbitmq {
         exchange name: 'trackIssue', type: topic, durable: true, autoDelete: false, {
             sendNotification durable: true, autoDelete: false, binding: 'trackIssue.sendNotification'
         }
+        exchange name: 'email', type: topic, durable: true, autoDelete: false, {
+            sendNotification durable: true, autoDelete: false, binding: 'email.user.register'
+        }
     }
 }
 // Added by the Spring Security Core plugin:
@@ -146,4 +149,28 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/images/**'  : ['permitAll'],
         '/**/favicon.ico': ['permitAll']
 ]
+
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "anujnigam.friends@gmail.com"
+        password = "nextdefault"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
+}
+
+// Added by the Grails Mandrill plugin:
+mandrill {
+	apiKey = ""
+	// insert proxy values if needed
+	//proxy {
+	//    host = ""
+	// The port Value has to be an integer ;)
+	//    port = ""
+	//}
+}
 
