@@ -71,7 +71,7 @@ grails.enable.native2ascii = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
-grails.web.disable.multipart = false
+grails.web.disable.multipart=false
 
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
@@ -103,19 +103,33 @@ log4j.main = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
-    error 'org.codehaus.groovy.grails.web.servlet',        // controllers
-            'org.codehaus.groovy.grails.web.pages',          // GSP
-            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-            'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-            'org.codehaus.groovy.grails.commons',            // core / classloading
-            'org.codehaus.groovy.grails.plugins',            // plugins
-            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-            'org.springframework',
-            'org.hibernate',
-            'net.sf.ehcache.hibernate'
+    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+           'org.codehaus.groovy.grails.web.pages',          // GSP
+           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+           'org.codehaus.groovy.grails.commons',            // core / classloading
+           'org.codehaus.groovy.grails.plugins',            // plugins
+           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+           'org.springframework',
+           'org.hibernate',
+           'net.sf.ehcache.hibernate'
 }
 
+rabbitmq {
+    connectionfactory {
+        username = 'guest'
+        password = 'guest'
+        hostname = 'localhost'
+//        consumers = 5
+    }
+
+    queues = {
+        exchange name: 'trackIssue', type: topic, durable: true, autoDelete: false, {
+            sendNotification durable: true, autoDelete: false, binding: 'trackIssue.sendNotification'
+        }
+    }
+}
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.backend.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.backend.UserRole'
