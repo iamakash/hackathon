@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Smartly | Sign Up</title>
-    <meta name="layout" content="main"/>
+    <meta name="layout" content="userLayout"/>
 </head>
 
 <body>
