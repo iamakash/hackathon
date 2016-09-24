@@ -13,7 +13,7 @@
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Default Label <span class="caret"></span></a>
                  <ul class="dropdown-menu" role="menu">
                      <li><a href="${createLink(controller: "defaultLabel",action: "create")}">Create</a></li>
-                     <li><a href="${createLink(controller: "defaultLabel",action: "edit")}">Update</a></li>
+                     <li><a href="${createLink(controller: "defaultLabel",action: "show")}">Show</a></li>
                      <li><a href="#">Label</a></li>
                  </ul>
              </li>

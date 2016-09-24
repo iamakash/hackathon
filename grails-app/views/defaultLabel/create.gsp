@@ -3,8 +3,6 @@
 <head>
     <meta name='layout' content='main'/>
     <title>Create DefaultLabel</title>
-    <script src='${resource(dir: "/tinymce/js/tinymce", file: "tinymce.min.js")}'></script>
-
     <script>
         tinymce.init({
             selector: '#description'

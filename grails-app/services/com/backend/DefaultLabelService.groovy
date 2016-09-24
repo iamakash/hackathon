@@ -16,10 +16,11 @@ class DefaultLabelService {
 
     def update(DefaultLabelCO defaultLabelCO, DefaultLabel defaultLabel) {
         User modifiedBy = authenticationService.authenticatedUser()
-        defaultLabel=Default
+
         defaultLabel.name = defaultLabelCO.name
         defaultLabel.description = defaultLabelCO.description
         defaultLabel.modifiedBy = modifiedBy
+        defaultLabel.save(flush: true, failOnError: true)
     }
 
     List<DefaultLabel> list(Integer max, Integer offset) {
@@ -27,6 +28,7 @@ class DefaultLabelService {
             maxResults(max)
             firstResult(offset)
         }
+        return list
     }
 
 

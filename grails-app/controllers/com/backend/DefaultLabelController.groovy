@@ -30,9 +30,8 @@ class DefaultLabelController {
     def update(DefaultLabelCO defaultLabelCO) {
 
         if (defaultLabelCO.validate()) {
-            println("#################"+defaultLabelCO.name)
-            println("#################"+defaultLabelCO.description)
-            DefaultLabel defaultLabel = DefaultLabel.findById(params.id as Long)
+            println("@@@@@@@@@@@@@@@@@@@@@@@@@"+params.defaultLabelId)
+            DefaultLabel defaultLabel = DefaultLabel.findById(params.defaultLabelId as Long)
             println("##############"+defaultLabel.toString())
             defaultLabelService.update(defaultLabelCO, defaultLabel)
             redirect action: "show"
