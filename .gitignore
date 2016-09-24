@@ -1,0 +1,15 @@
+.idea
+.classpath
+.project
+.settings
+web/null/
+target
+*.iml
+/out/
+*.DS_Store
+/web/chromedriver.log
+/web/.gradle/
+test/data/
+web/*.sql
+web/*.db
+web/*.log
