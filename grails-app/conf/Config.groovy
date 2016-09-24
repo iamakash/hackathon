@@ -154,14 +154,16 @@ grails {
     mail {
         host = "smtp.gmail.com"
         port = 465
-        username = "anujnigam.friends@gmail.com"
-        password = "nextdefault"
-        props = ["mail.smtp.auth":"true",
-                 "mail.smtp.socketFactory.port":"465",
-                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-                 "mail.smtp.socketFactory.fallback":"false"]
+        username = "wealthpatdev@gmail.com"
+        password = "wealthpat1234"
+        props = ["mail.smtp.auth"                  : "true",
+                 "mail.smtp.socketFactory.port"    : "465",
+                 "mail.smtp.socketFactory.class"   : "javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback": "false"]
+
     }
 }
+
 
 // Added by the Grails Mandrill plugin:
 mandrill {
