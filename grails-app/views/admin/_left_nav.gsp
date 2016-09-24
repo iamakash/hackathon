@@ -23,7 +23,8 @@
                <ul class="dropdown-menu" role="menu">
                  <li class="dropdown-header"></li>
                  <li><a href="${createLink(controller: "admin",action: "showMilestone")}">Mile Stone</a></li>
-                 <li><a href="#">Label</a></li>
+                 <li><a href="${createLink(controller: "admin",action: "showLabels")}">Label</a></li>
+                 <li><a href="${createLink(controller: "admin",action: "showState")}">State</a></li>
                </ul>
              </li>
 

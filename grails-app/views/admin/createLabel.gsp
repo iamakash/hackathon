@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name='layout' content='main'/>
-    <title>Create MileStone</title>
+    <title>Create Label</title>
 </head>
 
 <body>
@@ -20,19 +20,19 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">Add Milestone</div>
+                            <div class="panel-heading">Add Label</div>
 
                             <div class="panel-body">
-                                <g:form controller="admin" action="saveMilestone">
+                                <g:form controller="admin" action="saveLabel">
                                     <div class="form-group">
-                                        <label for="name">Milestone Name</label>
+                                        <label for="name">Label Name</label>
                                         <input type="text" class="form-control" name="name" id="name"
                                                aria-describedby="nameHelp"
                                                placeholder="Name">
                                     </div>
 
                                     <div class="form-group">
-                                        Milestone Decsription
+                                        Label Decsription
                                         <textarea class="form-control" name="description" id="description"
                                                   placeholder="Description"></textarea>
                                     </div>

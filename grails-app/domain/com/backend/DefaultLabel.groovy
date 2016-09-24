@@ -1,5 +1,7 @@
 package com.backend
 
+import com.backend.util.command.DefaultLabelCO
+
 class DefaultLabel implements Serializable {
 
     String name
@@ -17,5 +19,12 @@ class DefaultLabel implements Serializable {
         modifiedBy nullable: true
         dateCreated nullable: true
         lastUpdated nullable: true
+    }
+
+    DefaultLabel(DefaultLabelCO defaultLabelCO) {
+        name = defaultLabelCO.name
+        description = defaultLabelCO.description
+        createdBy = defaultLabelCO.createdBy
+        modifiedBy = defaultLabelCO.modifiedBy
     }
 }

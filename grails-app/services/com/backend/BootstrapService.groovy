@@ -75,7 +75,28 @@ class BootstrapService {
     def createMilestones(){
         User user = User.findByUsername("akash")
         if (DefaultMilestone.findAll().size()==0){
+            new DefaultMilestone(name: "7days",description: "Must complete",createdBy: user).save(flush: true)
+            new DefaultMilestone(name: "15days",description: "Must complete",createdBy: user).save(flush: true)
+            new DefaultMilestone(name: "21days",description: "Must complete",createdBy: user).save(flush: true)
+            new DefaultMilestone(name: "1 month",description: "Must complete",createdBy: user).save(flush: true)
+        }
+    }
 
+    def createLabels(){
+        User user = User.findByUsername("akash")
+        if (DefaultLabel.findAll().size()==0){
+            new DefaultLabel(name: "High",description: "Must complete with in 24 hours",createdBy: user).save(flush: true)
+            new DefaultLabel(name: "Bug",description: "Must complete with in 24 hours",createdBy: user).save(flush: true)
+            new DefaultLabel(name: "Priority High",description: "Must complete in 2 weeks",createdBy: user).save(flush: true)
+            new DefaultLabel(name: "Low",description: "Can delay",createdBy: user).save(flush: true)
+        }
+    }
+
+    def createStatus(){
+        User user = User.findByUsername("akash")
+        if (DefaultState.findAll().size()==0){
+            new DefaultState(name: "Waiting",description: "Waiting",createdBy: user).save(flush: true)
+            new DefaultState(name: "Approved",description: "Approved",createdBy: user).save(flush: true)
         }
     }
 

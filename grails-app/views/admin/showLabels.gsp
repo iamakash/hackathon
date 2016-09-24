@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name='layout' content='main'/>
-    <title>MileStones</title>
+    <title>Labels</title>
 </head>
 
 <body>
@@ -10,7 +10,7 @@
         <g:render template="left_nav"/>
         <div class="row">
             <div class="col-lg-8  col-lg-offset-2 text-right">
-                <a href="${createLink(controller: "admin",action: "createMileStone")}" class="btn btn-warning"> Create New Mile Stone</a>
+                <a href="${createLink(controller: "admin",action: "createLabel")}" class="btn btn-warning"> Create New Label</a>
             </div>
         </div>
         <div id="page-content-wrapper">
@@ -32,13 +32,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <g:if test="${mileStoneList!=null}">
-                                <g:each in="${mileStoneList}" var="milestone">
+                            <g:if test="${labelList!=null}">
+                                <g:each in="${labelList}" var="label">
                                     <tr>
-                                        <td>${milestone.name}</td>
-                                        <td>${milestone.description}</td>
-                                        <td>${milestone.createdBy.username}</td>
-                                        <td><a href="${createLink(controller: "admin",action: "deleteMilestone",params: [id:milestone.id])}">Delete</a> </td>
+                                        <td>${label.name}</td>
+                                        <td>${label.description}</td>
+                                        <td>${label.createdBy.username}</td>
+                                        <td><a href="${createLink(controller: "admin",action: "deleteLabels",params: [id:label.id])}">Delete</a> </td>
                                     </tr>
                                 </g:each>
                             </g:if>

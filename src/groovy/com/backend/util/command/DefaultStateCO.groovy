@@ -1,8 +1,10 @@
-package com.backend
+package com.backend.util.command
 
-import com.backend.util.command.DefaultStateCO
+import com.backend.User
+import grails.validation.Validateable
 
-class DefaultState implements Serializable {
+@Validateable
+class DefaultStateCO {
 
     String name
     String description
@@ -19,12 +21,5 @@ class DefaultState implements Serializable {
         modifiedBy nullable: true
         dateCreated nullable: true
         lastUpdated nullable: true
-    }
-
-    DefaultState(DefaultStateCO defaultStateCO){
-        name = defaultStateCO.name
-        description = defaultStateCO.description
-        createdBy = defaultStateCO.createdBy
-        modifiedBy = defaultStateCO.createdBy
     }
 }
