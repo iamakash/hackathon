@@ -8,4 +8,8 @@ class AdminController {
     def index() {
         render view: "/admin/index"
     }
+
+    def showMilestone(){
+        render view: "/admin/showMilestone"
+    }
 }
