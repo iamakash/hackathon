@@ -7,9 +7,9 @@
 
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
+%{--<div class="container">--}%
+    <div class="row" style="text-align: center;margin-top: 10%">
+        <div class="col-md-offset-4 col-md-4">
             <div class="form-login">
                 <form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
                     <g:if test='${flash.message}'>
@@ -32,7 +32,7 @@
             </div>
 
         </div>
-    </div>
+    %{--</div>--}%
 </div>
 <script type='text/javascript'>
     (function () {
