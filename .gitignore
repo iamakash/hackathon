@@ -13,3 +13,4 @@ test/data/
 web/*.sql
 web/*.db
 web/*.log
+/web-app/WEB-INF/tld
